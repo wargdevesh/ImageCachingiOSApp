@@ -104,8 +104,9 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource{
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "myCollection", for: indexPath) as! MyCollectionViewCell
         //= domain + "/" + basePath + "/0/" + key
         let imageUrlString = data[indexPath.row].thumbnail.domain + "/" + data[indexPath.row].thumbnail.basePath + "/0/" +  data[indexPath.row].thumbnail.key.rawValue
-        debugPrint("imageUrlString is \(imageUrlString)")
-        cell.myCollectionImage.loadImage(fromURL: URL(string: data[indexPath.row].thumbnail.domain + "/" + data[indexPath.row].thumbnail.basePath + "/0/" +  data[indexPath.row].thumbnail.key.rawValue) ?? URL(fileURLWithPath: ""), placeholderImage: "placeholderImage")
+        //debugPrint("imageUrlString is \(imageUrlString)")
+      //  cell.myCollectionImage.loadImage(fromURL: URL(string: data[indexPath.row].thumbnail.domain + "/" + data[indexPath.row].thumbnail.basePath + "/0/" +  data[indexPath.row].thumbnail.key.rawValue) ?? URL(fileURLWithPath: ""), placeholderImage: "placeholderImage")
+        cell.myCollectionImage.loadImage2(fromURL: imageUrlString, placeholderImage: "placeholderImage")
         
         return cell
     }
